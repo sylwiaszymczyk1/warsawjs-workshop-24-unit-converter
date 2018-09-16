@@ -9,7 +9,7 @@
     "sysinfo": "uname -a && cat /proc/meminfo && df -h . && echo SYSINFO OK || echo SYSINFO ERROR",
     "versions": "echo -n 'NODE ' && node -v && echo -n 'NPM ' && npm -v && node -e 'console.log(process.versions);' && echo VERSIONS OK || echo VERSIONS ERROR",
     "start": "node backend/server.js",
-    "jest": "jest && echo JEST OK || (echo JEST ERROR; false)",
+    "jest": "jest --forceExit --detectOpenHandles && echo JEST OK || (echo JEST ERROR; false)",
     "jest-cover": "jest --coverage && echo JEST OK || (echo JEST ERROR; false)",
     "tap": "tap tests/tap/*.test.js && echo TAP OK || (echo TAP ERROR; false)",
     "tap-cover": "tap tests/tap/*.test.js --coverage && echo TAP OK || (echo TAP ERROR; false)",
